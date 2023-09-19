@@ -1,15 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://djxs7i6mxtb8c"]
 
-[ext_resource type="Texture2D" uid="uid://bmivu8hm4lgas" path="res://assets/Player.png" id="1_ib2rj"]
-[ext_resource type="Script" path="res://assets/Player/Player.gd" id="1_qk41q"]
+[ext_resource type="PackedScene" uid="uid://buk5ucbe0wdw" path="res://assets/Player/player.tscn" id="1_coia6"]
+[ext_resource type="PackedScene" uid="uid://d00druda2ip5b" path="res://assets/Asteroid/asteroid.tscn" id="2_qbgle"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(512, 300)
-script = ExtResource("1_qk41q")
+[node name="Player" parent="." instance=ExtResource("1_coia6")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(512, 200)
-texture = ExtResource("1_ib2rj")
-metadata/_edit_group_ = true
+[node name="Asteroid_container" type="Node2D" parent="."]
+
+[node name="Asteroid" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
+position = Vector2(100, 100)
+
+[node name="Asteroid2" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
+position = Vector2(900, 600)
+
+[node name="Effects" type="Node2D" parent="."]
