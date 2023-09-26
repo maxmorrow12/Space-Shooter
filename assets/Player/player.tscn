@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bmivu8hm4lgas" path="res://assets/Player.png" id="3_2fd60"]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(512, 300)
 script = ExtResource("1_v0c8x")
 
 [node name="Exhaust" type="Sprite2D" parent="."]

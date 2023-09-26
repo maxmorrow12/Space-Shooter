@@ -14,3 +14,9 @@ func _on_timer_timeout():
 		bullet.rotation = d
 		bullet.global_position = global_position + Vector2(0,-40).rotated(d)
 		Effects.add_child(bullet)
+
+func damage(d): 
+	health -= d 
+	if health <= 0: 
+		Global.update_score(500)
+		queue_free()
