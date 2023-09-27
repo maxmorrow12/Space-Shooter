@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var Bullet = load("res://assets/Asteroid/Enemy/Enemy Bullet.tscn")
+var Bullet = load("res://assets/Asteroid/Enemy/EnemyBullet.tscn")
 var health = 10
 var y_position = [100,150,200,500,550]
 var initial_position = Vector2.ZERO

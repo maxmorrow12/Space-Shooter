@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://djxs7i6mxtb8c"]
+[gd_scene load_steps=8 format=3 uid="uid://djxs7i6mxtb8c"]
 
+[ext_resource type="Texture2D" uid="uid://cuvjnuqmejl22" path="res://UI/Space for space shooter.jpeg" id="1_jjlv0"]
 [ext_resource type="PackedScene" uid="uid://d00druda2ip5b" path="res://assets/Asteroid/asteroid.tscn" id="2_qbgle"]
 [ext_resource type="Script" path="res://assets/Player/Player_container.gd" id="3_aopq3"]
 [ext_resource type="PackedScene" uid="uid://ds3ybk8skm0kq" path="res://assets/Asteroid/enemy.tscn" id="3_sdo84"]
@@ -9,6 +10,11 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(588, 286)
+scale = Vector2(1.89844, 2.01562)
+texture = ExtResource("1_jjlv0")
+
 [node name="Asteroid_container" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
@@ -16,6 +22,24 @@ position = Vector2(100, 100)
 
 [node name="Asteroid2" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
 position = Vector2(900, 600)
+
+[node name="Asteroid3" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
+position = Vector2(700, 600)
+motion_mode = 1
+
+[node name="Asteroid4" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
+position = Vector2(500, 600)
+rotation = 2.85536
+motion_mode = 1
+
+[node name="Asteroid5" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
+position = Vector2(500, 600)
+motion_mode = 1
+
+[node name="Asteroid6" parent="Asteroid_container" instance=ExtResource("2_qbgle")]
+position = Vector2(500, 600)
+collision_layer = 7
+motion_mode = 1
 
 [node name="Effects" type="Node2D" parent="."]
 
@@ -26,6 +50,15 @@ script = ExtResource("3_aopq3")
 position = Vector2(400, 100)
 
 [node name="Enemy" parent="Enemy_container" instance=ExtResource("3_sdo84")]
+
+[node name="Enemy2" parent="Enemy_container" instance=ExtResource("3_sdo84")]
+
+[node name="Enemy3" parent="Enemy_container" instance=ExtResource("3_sdo84")]
+
+[node name="Enemy4" parent="Enemy_container" instance=ExtResource("3_sdo84")]
+
+[node name="Enemy5" parent="Enemy_container" instance=ExtResource("3_sdo84")]
+platform_on_leave = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -76,6 +109,7 @@ autostart = true
 
 [node name="Menu" type="Control" parent="UI"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
